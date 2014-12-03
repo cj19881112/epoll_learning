@@ -2,16 +2,21 @@
 #define CHANNEL_H
 
 #include "Buffer.h"
+#include "Poller.h"
+#include "Packet.h"
+#include "ChannelContex.h"
+#include "PacketStreamer.h"
+#include "PacketHandler.h"
 
 class Channel {
 public:
-	Channel(Poller *poller) 
+	Channel(Poller *poller=0) 
 		: _poller(poller)
 	{
 	}
 	void handleRead(ChannelContext &context)
 	{
-		PacketStreamer *streamer = context.getStreamer();
+		PacketStreamer *streamer = context.getPacketStreamer();
 		PacketHandler *handler = context.getPacketHandler();
 		Packet *packet = 0;
 		int n = 0;
@@ -24,33 +29,51 @@ public:
 			}
 
 			for ( ;; ) {
-				packet = streamer.newPacket(_inputBuffer);
+				packet = streamer->newPacket(_inputBuffer);
 				if (!packet) {
 					break;
 				}
-				handler.handlePacket(packet);
-				streamer.deletePacket(packet);
+				handler->handlePacket(packet);
+				streamer->deletePacket(packet);
 			}
 		} 
 
 	}
 	void handleWrite(ChannelContext &context)
 	{
-		
+		int n = 0;
+		do {
+			n = _outputBuffer.pour(_socket);
+			if (0 == n) {
+				break;
+			}	
+		} while (_outputBuffer.available() > 0);
+		if (0 == _outputBuffer.available()) {
+			_poller->disableWrite(this);
+		}	
 	}
 
 	void postPacket(Packet &packet)
 	{
 		packet.encodeAndWrite(_outputBuffer);
 		if (!_writeEnabled) {
+			_poller->enableWrite(this);
 		}
+	}
+	void setPoller(Poller *poller)
+	{
+		_poller = poller;
+	}	
+	Socket *getSocket()
+	{
+		return &_socket;
 	}
 private:
 	Buffer _inputBuffer;
 	Buffer _outputBuffer;
 	Socket _socket;
 	bool _writeEnabled;
-	Poller *poller;
+	Poller *_poller;
 };
 
 #endif

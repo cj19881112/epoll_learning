@@ -44,6 +44,11 @@ public:
 		return true;
 	}
 
+	int getFd()
+	{
+		return _fd;
+	}
+
 private:
 	int _fd;
 };
