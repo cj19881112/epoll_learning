@@ -5,9 +5,7 @@
 
 class Packet {
 public:
-	void encodeAndWrite(Buffer &outputBuffer)
-	{
-	}
+	virtual void encodeAndWrite(Buffer &outputBuffer) = 0;
 };
 
 #endif

@@ -10,7 +10,11 @@ public:
 	int fill(Socket &socket)
 	{
 		ensureFreeSpace(LINE_SIZE);
-		return socket.read(rawPtr(), LINE_SIZE);
+		int n = socket.read(rawPtr(), LINE_SIZE);
+		if (n > 0) {
+			_dataEnd += n;
+		}
+		return n;
 	}
 
 	int fill(const char *byteBuf, int len)
@@ -23,14 +27,14 @@ public:
 	int pour(Socket &socket)
 	{
 		int n = socket.write(rawPtr(), available());	
-		drop(n);
+		_dataBegin += n;
 		return n;
 	}
 
 	int pour(char *byteBuf, int len)
 	{
 		memcpy(byteBuf, rawPtr(), len);
-		add(len);
+		_dataBegin += len;
 		return len;
 	}
 
@@ -47,11 +51,6 @@ public:
 	void drop(int len)
 	{
 		_dataBegin += len;
-	}
-
-	void add(int len)
-	{
-		_dataEnd += len;
 	}
 
 private:

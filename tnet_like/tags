@@ -1,0 +1,129 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACCEPTOR_H	Acceptor.h	2;"	d
+Acceptor	Acceptor.cpp	/^Acceptor::Acceptor(const char *host, int port)$/;"	f	class:Acceptor
+Acceptor	Acceptor.h	/^class Acceptor : public Channel {$/;"	c
+BUFFER_H	Buffer.h	2;"	d
+Buffer	Buffer.h	/^class Buffer {$/;"	c
+CHANNEL_CONTEXT_H	ChannelContext.h	2;"	d
+CHANNEL_H	Channel.h	2;"	d
+CONDITION_H	Condition.h	2;"	d
+Channel	Channel.cpp	/^Channel::Channel(Poller *poller) $/;"	f	class:Channel
+Channel	Channel.h	/^class Channel {$/;"	c
+ChannelContext	ChannelContext.h	/^class ChannelContext {$/;"	c
+Condition	Condition.h	/^	Condition()$/;"	f	class:Condition
+Condition	Condition.h	/^class Condition : public Noncopyable {$/;"	c
+EchoPacket	main.cpp	/^class EchoPacket : public Packet {$/;"	c	file:
+EchoPacketHandler	main.cpp	/^class EchoPacketHandler : public PacketHandler {$/;"	c	file:
+EchoPacketStreamer	main.cpp	/^class EchoPacketStreamer : public PacketStreamer {$/;"	c	file:
+IOEVENT_H	IOEvent.h	2;"	d
+IOEvent	IOEvent.h	/^struct IOEvent {$/;"	s
+LINE_SIZE	Buffer.h	/^	enum { LINE_SIZE = 8192 };$/;"	e	enum:Buffer::__anon1
+MAX_EVENT	Poller.h	/^	enum { MAX_EVENT = 256 };$/;"	e	enum:Poller::__anon2
+MUTEX_H	Mutex.h	2;"	d
+Mutex	Mutex.h	/^	Mutex()$/;"	f	class:Mutex
+Mutex	Mutex.h	/^class Mutex : public Noncopyable {$/;"	c
+MutexGuard	Mutex.h	/^	MutexGuard(Mutex &mutex)$/;"	f	class:MutexGuard
+MutexGuard	Mutex.h	/^class MutexGuard : public Noncopyable {$/;"	c
+NONCOPYABLE_H	Noncopyable.h	2;"	d
+Noncopyable	Noncopyable.h	/^	Noncopyable() {}$/;"	f	class:Noncopyable
+Noncopyable	Noncopyable.h	/^class Noncopyable {$/;"	c
+PACKET_H	Packet.h	2;"	d
+PACKET_HANDLER_H	PacketHandler.h	2;"	d
+PACKET_STREAMER_H	PacketStreamer.h	2;"	d
+POLLER_H	Poller.h	2;"	d
+Packet	Packet.h	/^class Packet {$/;"	c
+PacketHandler	PacketHandler.h	/^class PacketHandler {$/;"	c
+PacketStreamer	PacketStreamer.h	/^class PacketStreamer {$/;"	c
+Poller	Poller.cpp	/^Poller::Poller()$/;"	f	class:Poller
+Poller	Poller.h	/^class Poller {$/;"	c
+SERVERSOCKET_H	ServerSocket.h	2;"	d
+SOCKET_H	Socket.h	2;"	d
+ServerSocket	ServerSocket.cpp	/^ServerSocket::ServerSocket(const char *ip, int port)$/;"	f	class:ServerSocket
+ServerSocket	ServerSocket.h	/^class ServerSocket {$/;"	c
+Socket	Socket.h	/^	Socket(int fd = -1)$/;"	f	class:Socket
+Socket	Socket.h	/^class Socket {$/;"	c
+TRANSPORT_H	Transport.h	2;"	d
+Transport	Transport.cpp	/^Transport::Transport(PacketStreamer *streamer, PacketHandler *handler)$/;"	f	class:Transport
+Transport	Transport.h	/^class Transport {$/;"	c
+_byteBufferBegin	Buffer.h	/^	char *_byteBufferBegin;$/;"	m	class:Buffer
+_byteBufferEnd	Buffer.h	/^	char *_byteBufferEnd;$/;"	m	class:Buffer
+_dataBegin	Buffer.h	/^	char *_dataBegin;$/;"	m	class:Buffer
+_dataEnd	Buffer.h	/^	char *_dataEnd;$/;"	m	class:Buffer
+_epollFd	Poller.h	/^	int _epollFd;$/;"	m	class:Poller
+_fd	Socket.h	/^	int _fd;$/;"	m	class:Socket
+_handler	Transport.h	/^	PacketHandler *_handler;$/;"	m	class:Transport
+_host	Acceptor.h	/^	std::string _host;$/;"	m	class:Acceptor
+_inputBuffer	Channel.h	/^	Buffer _inputBuffer;$/;"	m	class:Channel
+_listenFd	ServerSocket.h	/^	int _listenFd;$/;"	m	class:ServerSocket
+_mutex	Mutex.h	/^	Mutex &_mutex;$/;"	m	class:MutexGuard
+_outputBuffer	Channel.h	/^	Buffer _outputBuffer;$/;"	m	class:Channel
+_poller	Channel.h	/^	Poller *_poller;$/;"	m	class:Channel
+_poller	Transport.h	/^	Poller *_poller;$/;"	m	class:Transport
+_port	Acceptor.h	/^	int _port;$/;"	m	class:Acceptor
+_pthreadCond	Condition.h	/^	pthread_cond_t _pthreadCond;$/;"	m	class:Condition
+_pthreadMutex	Mutex.h	/^	pthread_mutex_t _pthreadMutex;$/;"	m	class:Mutex
+_serverSocket	Acceptor.h	/^	ServerSocket _serverSocket;$/;"	m	class:Acceptor
+_socket	Channel.h	/^	Socket _socket;$/;"	m	class:Channel
+_streamer	Transport.h	/^	PacketStreamer *_streamer;$/;"	m	class:Transport
+_writeEnabled	Channel.h	/^	bool _writeEnabled;$/;"	m	class:Channel
+accept	ServerSocket.cpp	/^bool ServerSocket::accept(Socket *socket)$/;"	f	class:ServerSocket
+add	Buffer.h	/^	void add(int len)$/;"	f	class:Buffer
+addChannel	Poller.cpp	/^void Poller::addChannel(Channel *channel)$/;"	f	class:Poller
+available	Buffer.h	/^	int available()$/;"	f	class:Buffer
+capacity	Buffer.h	/^	int capacity()$/;"	f	class:Buffer
+channel	IOEvent.h	/^	Channel *channel;$/;"	m	struct:IOEvent
+channels	Poller.h	/^	std::set<Channel*> channels;$/;"	m	class:Poller
+deletePacket	main.cpp	/^	void deletePacket(Packet *packet)$/;"	f	class:EchoPacketStreamer	file:
+disableWrite	Poller.cpp	/^void Poller::disableWrite(Channel *channel)$/;"	f	class:Poller
+drop	Buffer.h	/^	void drop(int len)$/;"	f	class:Buffer
+enableRead	Poller.cpp	/^void Poller::enableRead(Channel *channel)$/;"	f	class:Poller
+enableWrite	Poller.cpp	/^void Poller::enableWrite(Channel *channel)$/;"	f	class:Poller
+encodeAndWrite	main.cpp	/^	void encodeAndWrite(Buffer &outputBuffer) $/;"	f	class:EchoPacket	file:
+ensureFreeSpace	Buffer.h	/^	void ensureFreeSpace(int len)$/;"	f	class:Buffer
+errorOccurred	IOEvent.h	/^	bool errorOccurred;$/;"	m	struct:IOEvent
+fill	Buffer.h	/^	int fill(Socket &socket)$/;"	f	class:Buffer
+fill	Buffer.h	/^	int fill(const char *byteBuf, int len)$/;"	f	class:Buffer
+freeSpace	Buffer.h	/^	int freeSpace()$/;"	f	class:Buffer
+getFd	Socket.h	/^	int getFd()$/;"	f	class:Socket
+getPacketHandler	ChannelContext.h	/^	PacketHandler *getPacketHandler()$/;"	f	class:ChannelContext
+getPacketStreamer	ChannelContext.h	/^	PacketStreamer *getPacketStreamer()$/;"	f	class:ChannelContext
+getPthreadMutex	Mutex.h	/^	pthread_mutex_t *getPthreadMutex()$/;"	f	class:Mutex
+getSocket	Channel.h	/^	Socket *getSocket() { return &_socket; }$/;"	f	class:Channel
+handlePacket	main.cpp	/^	void handlePacket(Packet *packet)$/;"	f	class:EchoPacketHandler	file:
+handleRead	Acceptor.cpp	/^void Acceptor::handleRead(PacketStreamer *streamer, $/;"	f	class:Acceptor
+handleRead	Channel.cpp	/^void Channel::handleRead(PacketStreamer *streamer, $/;"	f	class:Channel
+handleWrite	Acceptor.cpp	/^void Acceptor::handleWrite()$/;"	f	class:Acceptor
+handleWrite	Channel.cpp	/^void  Channel::handleWrite()$/;"	f	class:Channel
+listen	Transport.cpp	/^void Transport::listen(const char *host, int port)$/;"	f	class:Transport
+lock	Mutex.h	/^	void lock()$/;"	f	class:Mutex
+main	main.cpp	/^int main()$/;"	f
+newPacket	main.cpp	/^	Packet *newPacket(Buffer &inputBuffer)$/;"	f	class:EchoPacketStreamer	file:
+notify	Condition.h	/^	void notify()$/;"	f	class:Condition
+notifyAll	Condition.h	/^	void notifyAll()$/;"	f	class:Condition
+poll	Poller.cpp	/^void Poller::poll(std::vector<IOEvent> &ioEvents, int timeOut)$/;"	f	class:Poller
+postPacket	Acceptor.cpp	/^void Acceptor::postPacket(Packet &packet)$/;"	f	class:Acceptor
+postPacket	Channel.cpp	/^void  Channel::postPacket(Packet &packet)$/;"	f	class:Channel
+pour	Buffer.h	/^	int pour(Socket &socket)$/;"	f	class:Buffer
+pour	Buffer.h	/^	int pour(char *byteBuf, int len)$/;"	f	class:Buffer
+rawPtr	Buffer.h	/^	char *rawPtr()$/;"	f	class:Buffer
+read	Socket.cpp	/^int Socket::read(char *buf, int len)$/;"	f	class:Socket
+readOccurred	IOEvent.h	/^	bool readOccurred;$/;"	m	struct:IOEvent
+run	Transport.cpp	/^void Transport::run()$/;"	f	class:Transport
+setFd	Socket.h	/^	void setFd(int fd)$/;"	f	class:Socket
+setNonblock	Socket.cpp	/^bool Socket::setNonblock()$/;"	f	class:Socket
+setPoller	Channel.h	/^	void setPoller(Poller *poller) { _poller = poller; }	$/;"	f	class:Channel
+tailFreeSpace	Buffer.h	/^	int tailFreeSpace()$/;"	f	class:Buffer
+unlock	Mutex.h	/^	void unlock()$/;"	f	class:Mutex
+wait	Condition.h	/^	void wait(Mutex &mutex)$/;"	f	class:Condition
+wirteOccurred	IOEvent.h	/^	bool wirteOccurred;$/;"	m	struct:IOEvent
+write	Socket.cpp	/^int Socket::write(const char *buf, int len)$/;"	f	class:Socket
+~Condition	Condition.h	/^	~Condition()$/;"	f	class:Condition
+~Mutex	Mutex.h	/^	~Mutex()$/;"	f	class:Mutex
+~MutexGuard	Mutex.h	/^	~MutexGuard()$/;"	f	class:MutexGuard
+~Noncopyable	Noncopyable.h	/^	~Noncopyable() {}$/;"	f	class:Noncopyable
+~Poller	Poller.cpp	/^Poller::~Poller()$/;"	f	class:Poller

@@ -3,15 +3,12 @@
 
 #include "Buffer.h"
 
+class Packet;
+
 class PacketStreamer {
 public:
-	Packet *newPacket(Buffer &inputBuffer)
-	{
-	}
-
-	void deletePacket(Packet *packet)
-	{
-	}
+	virtual Packet *newPacket(Buffer &inputBuffer) = 0;
+	virtual void deletePacket(Packet *packet) = 0;
 };
 
 #endif

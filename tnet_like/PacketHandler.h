@@ -2,12 +2,11 @@
 #define PACKET_HANDLER_H
 
 #include "Packet.h"
+#include "Channel.h"
 
 class PacketHandler {
 public:
-	void handlePacket(Packet *packet)
-	{
-	}
+	virtual void handlePacket(Packet *packet, Channel *channel) = 0;
 };
 
 #endif

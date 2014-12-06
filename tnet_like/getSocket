@@ -1,0 +1,8 @@
+Acceptor.cpp:	_serverSocket.accept(channel->getSocket());
+main.cpp:		channel->postPacket(*packet);
+Poller.cpp:	int fd = channel->getFd();
+Poller.cpp:	int fd = channel->getFd();
+Poller.cpp:	int fd = channel->getFd();
+Poller.cpp:	int fd = channel->getFd();
+Transport.cpp:				it->channel->handleRead(_streamer, _handler, _poller);
+Transport.cpp:				it->channel->handleWrite();
