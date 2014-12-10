@@ -10,14 +10,14 @@ public:
 	~Reactor();
 	void regist(int fd, int ev, std::function<void(Reactor*,int,int)> fun);
 	void unregist(int fd, int ev);
-	void react(int maxEvent = 128);
+	void remove(int fd);
+	void react(int timeOut = -1, int maxEvent = 128);
 private:
 	void epollCtl(int cmd, int fd, int ev);
 
-private:
-	std::map<int, function<void(Reactor*,int,int)> rhandleMap;
-	std::map<int, function<void(Reactor*,int,int)> whandleMap;
-	std::map<int, function<void(Reactor*,int,int)> ehandleMap;
+	std::map<int, std::function<void(Reactor*,int,int)>> rhandleMap;
+	std::map<int, std::function<void(Reactor*,int,int)>> whandleMap;
+	std::map<int, std::function<void(Reactor*,int,int)>> ehandleMap;
 
 	std::map<int, int> eventMap;
 
